@@ -15,7 +15,7 @@ namespace MoviesWeb.Models
         [Required]
         [StringLength(255)]
         public string Genre { get; set; }
-
+        
         public decimal AverageRating { get; set; }
     }
 }

@@ -1,12 +1,11 @@
 namespace MoviesWeb.Migrations
 {
     using System;
-    using Bogus;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using MoviesWeb.Models;
     using MoviesWeb.Repository;
+    using Bogus;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MoviesContext>
     {
@@ -29,11 +28,16 @@ namespace MoviesWeb.Migrations
             var movies = _unit.MovieRepository.GetAll();
             if (!movies.Any())
             {
-                for (var i = 0; i < 20; i++)
+                for (var i = 0; i < 100; i++)
                 {
+                    //var fake = new Faker<Movie>()
+                    //    .RuleFor(a => a.Title, f => f.Movies().MovieTitle())
+                    //    .RuleFor(a => a.YearOfRelease, f => f.Movies().MovieReleaseDate().Year)
+                    //    .RuleFor(a => a.Genre, f => f.Movies().Movie().Genres.ToString());
+
                     var fake = new Faker<Movie>()
                         .RuleFor(a => a.Title, f => f.Company.Random.Words())
-                        .RuleFor(a => a.YearOfRelease, f => f.Date.Past().Year)
+                        .RuleFor(a => a.YearOfRelease, f => f.Date.Past(50).Year)
                         .RuleFor(a => a.Genre, f => f.Random.Word());
 
                     _unit.MovieRepository.Add(fake.Generate());
@@ -43,7 +47,7 @@ namespace MoviesWeb.Migrations
             var users = _unit.UserRepository.GetAll();
             if (!users.Any())
             {
-                for (var i = 0; i < 20; i++)
+                for (var i = 0; i < 100; i++)
                 {
                     var fake = new Faker<User>()
                         .RuleFor(a => a.Name, f => f.Name.FullName());
@@ -58,13 +62,13 @@ namespace MoviesWeb.Migrations
                 users.Any()
                 )
             {
-                for (var i = 0; i < 20; i++)
+                for (var i = 0; i < 100; i++)
                 {
                     var fake = new Faker<UserRating>()
                         .RuleFor(a => a.Movie_Id, f => f.Random.Int(movies.Min(x => x.Id), movies.Max(x => x.Id)))
                         .RuleFor(a => a.User_Id, f => f.Random.Int(users.Min(x => x.Id), users.Max(x => x.Id)))
                         .RuleFor(a => a.Rating, f => f.Random.Decimal((decimal)0.0, (decimal)5.0))
-                        .RuleFor(a => a.Comment, f => f.Random.Words());
+                        .RuleFor(a => a.Comment, f => f.Lorem.Sentences());
 
                     _unit.UserRatingRepository.Add(fake.Generate());
                 }
