@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "4bf20b3f4b187ddd01af96ea47dda577c5263775"
+    "signature": "2baee6295c3c2a8595be5fe45a0ec819579c46a0"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,8 @@
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.2",
+          "SwaggerUi": "1.1.0"
         },
         "runtime": {
           "MoviesAPI.dll": {}
@@ -45,6 +46,22 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "SwaggerUi/1.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
+          "Microsoft.AspNetCore.StaticFiles": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Swashbuckle.SwaggerUi.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.5/Swashbuckle.SwaggerUi.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3249,6 +3266,13 @@
       "sha512": "sha512-mtweBXPWhp1CMQATtBT7ZfMZrbZBTKfjGwz6Y75NwGjx/GztDaUnfw8GK9KZ2T4fDIqKJyDjc9Rxlw5+G2FcVA==",
       "path": "newtonsoft.json/12.0.2",
       "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    },
+    "SwaggerUi/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gfK1DHXOXLYjgE76VkwCS8EXzFhZsT2IlbZN1m+EwkFmPL4PaBoYdkSqgiAeQ7jSu7lyn+QRfOkEC2zZ4svJBQ==",
+      "path": "swaggerui/1.1.0",
+      "hashPath": "swaggerui.1.1.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
