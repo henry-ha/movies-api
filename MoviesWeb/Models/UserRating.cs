@@ -1,14 +1,10 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MoviesWeb.Models
 {
     [Table("UserRating")]
-    public class UserRating : BaseEntity<int>
+    public class UserRating : BaseEntity
     {
-        public override int Id { get; set; }
-
         public int User_Id { get; set; }
         public int Movie_Id { get; set; }
         public decimal Rating { get; set; }

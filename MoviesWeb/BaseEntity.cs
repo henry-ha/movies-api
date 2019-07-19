@@ -1,4 +1,7 @@
-﻿public abstract class BaseEntity<T>
+﻿using System.ComponentModel.DataAnnotations;
+
+public class BaseEntity
 {
-    public abstract T Id { get; set; }
+    [Key]
+    public int Id { get; set; }
 }

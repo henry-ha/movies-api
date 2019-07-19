@@ -39,3 +39,4 @@ C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.2\M
 C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.2\MoviesAPI.RazorTargetAssemblyInfo.cache
 C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.2\MoviesAPI.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.2\MoviesAPI.pdb
+C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.2\MoviesAPI.csprojAssemblyReference.cache

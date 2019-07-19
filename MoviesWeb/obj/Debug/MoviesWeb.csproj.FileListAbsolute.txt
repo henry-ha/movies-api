@@ -284,3 +284,7 @@ C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Runtime.Compil
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.Migrations.Add_MoviesUsers.resources
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.Migrations.Update_FKs.resources
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.Migrations.UpdateRequired.resources
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\Bogus.dll
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\Bogus.pdb
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\Bogus.xml
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.Migrations.Movie_AverageRating.resources
