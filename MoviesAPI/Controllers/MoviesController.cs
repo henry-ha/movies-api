@@ -18,9 +18,9 @@ namespace MoviesAPI.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/movies/5
-        [HttpGet("{searchtext}")]
-        public ActionResult<string> Get(string searchtext, string filter)
+        // GET api/movies/{filter}/{searchtext}
+        [HttpGet("{filter}/{searchtext}")]
+        public ActionResult<string> Get(string filter, string searchtext)
         {
             //search movies by title, year of release, genre(s)
             string result = null;
