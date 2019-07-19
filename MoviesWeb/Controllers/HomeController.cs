@@ -4,8 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 
 namespace MoviesWeb.Controllers
-{
-    [Authorize]
+{    
     public class HomeController : Controller
     {
         public ActionResult Index()

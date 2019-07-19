@@ -2,7 +2,16 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "Microsoft.AspNet.WebApi.Client/5.2.6": {
+      "Microsoft.AspNet.Cors/5.2.7": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Cors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "10.0.1",
@@ -13,6 +22,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.7"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Cors/5.2.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Cors": "5.2.7",
+          "Microsoft.AspNet.WebApi.Core": "[5.2.7, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.Cors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.Cors.dll": {}
         }
       },
       "Microsoft.AspNetCore/2.2.0": {
@@ -2974,20 +3008,6 @@
           }
         }
       },
-      "SwaggerUi/1.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
-          "Microsoft.AspNetCore.StaticFiles": "1.0.0",
-          "Microsoft.Extensions.FileProviders.Embedded": "1.0.0"
-        },
-        "compile": {
-          "lib/netstandard1.5/Swashbuckle.SwaggerUi.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.5/Swashbuckle.SwaggerUi.dll": {}
-        }
-      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3092,6 +3112,19 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.5.0",
+          "System.Security.Permissions": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -4063,6 +4096,21 @@
           "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll": {}
         }
       },
+      "System.Security.Cryptography.ProtectedData/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Security.Cryptography.X509Certificates/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4452,14 +4500,35 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "MoviesWeb/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/MoviesWeb.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MoviesWeb.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Microsoft.AspNet.WebApi.Client/5.2.6": {
-      "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
+    "Microsoft.AspNet.Cors/5.2.7": {
+      "sha512": "r7qTj8SKzHT32F2mbB3qgE+6VUd2xILkGaq4LtMW+KP3dDAQmI//j+8Ku01I3D1GKZvB9PU8HTJPkaw7sxSLtQ==",
       "type": "package",
-      "path": "microsoft.aspnet.webapi.client/5.2.6",
+      "path": "microsoft.aspnet.cors/5.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/System.Web.Cors.dll",
+        "microsoft.aspnet.cors.5.2.7.nupkg.sha512",
+        "microsoft.aspnet.cors.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.7": {
+      "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/5.2.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4469,8 +4538,35 @@
         "lib/netstandard2.0/System.Net.Http.Formatting.xml",
         "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
         "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
-        "microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
+        "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
         "microsoft.aspnet.webapi.client.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.7": {
+      "sha512": "gM2QzApnHdy1FbKUJ/ROGJSm69P2G+HMoVd/t5Vq1O/zZ5TI4IKC9PX6nUfRt/NHgebZOIWHpB4/4K4inuy4yQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.core/5.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/web.config.transform",
+        "lib/net45/System.Web.Http.dll",
+        "lib/net45/System.Web.Http.xml",
+        "microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
+        "microsoft.aspnet.webapi.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Cors/5.2.7": {
+      "sha512": "LUY5ufoiYLHKZXdrrNe7GlAwmu9WlyrX5iUtBSLwFZ31/tvPobyU7j1E31OWVdGZMBvRCxKbfyB7unxgrjTRpA==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.cors/5.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/System.Web.Http.Cors.dll",
+        "lib/net45/System.Web.Http.Cors.xml",
+        "microsoft.aspnet.webapi.cors.5.2.7.nupkg.sha512",
+        "microsoft.aspnet.webapi.cors.nuspec"
       ]
     },
     "Microsoft.AspNetCore/2.2.0": {
@@ -7684,18 +7780,6 @@
         "version.txt"
       ]
     },
-    "SwaggerUi/1.1.0": {
-      "sha512": "gfK1DHXOXLYjgE76VkwCS8EXzFhZsT2IlbZN1m+EwkFmPL4PaBoYdkSqgiAeQ7jSu7lyn+QRfOkEC2zZ4svJBQ==",
-      "type": "package",
-      "path": "swaggerui/1.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard1.5/Swashbuckle.SwaggerUi.dll",
-        "swaggerui.1.1.0.nupkg.sha512",
-        "swaggerui.nuspec"
-      ]
-    },
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -8100,6 +8184,27 @@
         "ref/xamarinwatchos10/_._",
         "system.componentmodel.annotations.4.5.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/4.5.0": {
+      "sha512": "+2SYYKwbN0n+9SrBanflZdaVleFkytEfTNzOu+f3SK0vROMMrorpw1UJyHJQ1ZooughRxPmLj8Fh5N2tSe7sdA==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.xml",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -11007,6 +11112,47 @@
         "system.security.cryptography.primitives.nuspec"
       ]
     },
+    "System.Security.Cryptography.ProtectedData/4.5.0": {
+      "sha512": "s/MFK8BvgtejZj5a8qAPDXEGBtWkpFX98qwQP/wqVa9CgIC7LrKHxDFdlN5x6afGAb0ZVBVGIZlCdBLnO2QjZw==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.xml",
+        "ref/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Security.Cryptography.X509Certificates/4.3.0": {
       "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
       "type": "package",
@@ -12130,15 +12276,22 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "MoviesWeb/1.0.0": {
+      "type": "project",
+      "path": "../MoviesWeb/MoviesWeb.csproj",
+      "msbuildProject": "../MoviesWeb/MoviesWeb.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Microsoft.AspNet.WebApi.Cors >= 5.2.7",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
+      "MoviesWeb >= 1.0.0",
       "Newtonsoft.Json >= 12.0.2",
-      "SwaggerUi >= 1.1.0"
+      "System.Configuration.ConfigurationManager >= 4.5.0"
     ]
   },
   "packageFolders": {
@@ -12170,7 +12323,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\henry\\Documents\\Projects\\movies-api\\MoviesWeb\\MoviesWeb.csproj": {
+              "projectPath": "C:\\Users\\henry\\Documents\\Projects\\movies-api\\MoviesWeb\\MoviesWeb.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -12182,6 +12339,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "Microsoft.AspNet.WebApi.Cors": {
+            "target": "Package",
+            "version": "[5.2.7, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -12203,9 +12364,9 @@
             "target": "Package",
             "version": "[12.0.2, )"
           },
-          "SwaggerUi": {
+          "System.Configuration.ConfigurationManager": {
             "target": "Package",
-            "version": "[1.1.0, )"
+            "version": "[4.5.0, )"
           }
         },
         "imports": [
@@ -12215,5 +12376,37 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Cors 5.2.7' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Cors",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.7' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebApi.Cors 5.2.7' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebApi.Cors",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }

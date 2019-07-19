@@ -10,6 +10,30 @@
             history.pushState("", document.title, location.pathname);
         }
     }
+
+    var api_url = "https://localhost:44302/api/movies/";
+
+    $("#btnSearch").click(function () {
+
+        $("#results").html('');
+
+        var ddlFilters = document.getElementById("ddlFilters");
+        var strFilter = ddlFilters.options[ddlFilters.selectedIndex].value;
+        var txtSearch = document.getElementById("txtSearch").value;
+
+        $.ajax({
+            url: api_url + strFilter + "/" + txtSearch,
+            contentType: "application/json",
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            method: "GET",
+            dataType: 'json',
+            success: function (d) {
+                $("#results").html(d);
+                console.log(d);
+            }
+        })
+    });
+
     // Data
     self.Views = {
         Loading: {} // Other views are added dynamically by app.addViewModel(...).

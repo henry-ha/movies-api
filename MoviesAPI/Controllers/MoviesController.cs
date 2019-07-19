@@ -4,26 +4,30 @@ using System.Linq;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
 using MoviesAPI.Http;
+using MoviesWeb.Repository;
+using MoviesWeb.Models;
+using System.Web.Http.Cors;
 
 namespace MoviesAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MoviesController : ControllerBase
     {
-        // GET api/movies
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        public UnitOfWork work;
 
-        // GET api/movies/5
-        [HttpGet("{searchtext}")]
-        public ActionResult<string> Get(string searchtext, string filter)
+        public MoviesController()
+        {
+            work = new UnitOfWork();
+        }
+        
+        // GET api/movies/{filter}/{searchtext}
+        [HttpGet("{filter}/{searchtext}")]
+        public ActionResult<string> Get(string filter, string searchtext)
         {
             //search movies by title, year of release, genre(s)
-            string result = null;
+            IEnumerable<Movie> result = null;
 
             // 400 - invalid / no criteria given
             if (string.IsNullOrWhiteSpace(searchtext))
@@ -38,7 +42,38 @@ namespace MoviesAPI.Controllers
                     )
                 );
 
+            if (string.IsNullOrWhiteSpace(filter))
+            {
+                var errorMsg = "Please select a filter";
+                return new NotFoundObjectResult(
+                    new ErrorJsonResponse(
+                        400,
+                        ErrorJsonResponse.ErrorMessages.NotFound,
+                        new
+                        {
+                            errorMsg
+                        }
+                    )
+                );
+            }
+
+
             //get by searchtext
+            switch (filter.ToLower())
+            {
+                case "title":
+                    result = work.MovieRepository.Find(x => x.Title.ToLower() == searchtext.ToLower());
+                    break;
+
+                case "year":
+                    result = work.MovieRepository.Find(x => x.YearOfRelease.ToString() == searchtext.ToLower());
+                    break;
+
+                case "genre":
+                    result = work.MovieRepository.Find(x => x.Genre.ToLower() == searchtext.ToLower());
+                    break;
+            }
+           
 
             if (result == null)
                 return new NotFoundObjectResult(

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "2baee6295c3c2a8595be5fe45a0ec819579c46a0"
+    "signature": "4870e2d3966cd66144d96610c6747b2078dd716d"
   },
   "compilationOptions": {
     "defines": [
@@ -24,17 +24,74 @@
     ".NETCoreApp,Version=v2.2": {
       "MoviesAPI/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.WebApi.Cors": "5.2.7",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
+          "MoviesWeb": "1.0.0",
           "Newtonsoft.Json": "12.0.2",
-          "SwaggerUi": "1.1.0"
+          "System.Configuration.ConfigurationManager": "4.5.0"
         },
         "runtime": {
           "MoviesAPI.dll": {}
         },
         "compile": {
           "MoviesAPI.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cors/5.2.7": {
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Cors.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.7": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.7": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.7"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Cors/5.2.7": {
+        "dependencies": {
+          "Microsoft.AspNet.Cors": "5.2.7",
+          "Microsoft.AspNet.WebApi.Core": "5.2.7"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.Cors.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.Cors.dll": {}
         }
       },
       "Newtonsoft.Json/12.0.2": {
@@ -48,31 +105,226 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "SwaggerUi/1.1.0": {
+      "System.Configuration.ConfigurationManager/4.5.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
-          "Microsoft.AspNetCore.StaticFiles": "2.2.0",
-          "Microsoft.Extensions.FileProviders.Embedded": "2.2.0"
+          "System.Security.Cryptography.ProtectedData": "4.5.0",
+          "System.Security.Permissions": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard1.5/Swashbuckle.SwaggerUi.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.0.0"
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.26515.6"
           }
         },
         "compile": {
-          "lib/netstandard1.5/Swashbuckle.SwaggerUi.dll": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         }
       },
-      "Microsoft.AspNet.WebApi.Client/5.2.6": {
+      "System.Security.Cryptography.ProtectedData/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "MoviesWeb/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Newtonsoft.Json.Bson": "1.0.1"
+          "Microsoft.Owin": "4.0.0.0",
+          "EntityFramework": "6.0.0.0",
+          "System.Web.Optimization": "1.1.0.0",
+          "System.Web.Mvc": "5.2.4.0",
+          "Microsoft.Owin.Security.OAuth": "4.0.0.0",
+          "Owin": "1.0.0.0",
+          "Microsoft.AspNet.Identity.Core": "2.0.0.0",
+          "Microsoft.AspNet.Identity.Owin": "2.0.0.0",
+          "Microsoft.Owin.Security": "4.0.0.0",
+          "Microsoft.AspNet.Identity.EntityFramework": "2.0.0.0",
+          "Bogus": "28.0.2.0",
+          "Microsoft.Owin.Security.Cookies": "4.0.0.0",
+          "System.Web.Http.Owin": "5.2.4.0",
+          "System.Web.Http.WebHost": "5.2.4.0",
+          "Microsoft.Owin.Host.SystemWeb": "4.0.0.0",
+          "Microsoft.Web.Infrastructure": "1.0.0.0",
+          "System.Web.WebPages": "3.0.0.0",
+          "System.Web.WebPages.Razor": "3.0.0.0",
+          "System.Web.Razor": "3.0.0.0",
+          "System.Web.WebPages.Deployment": "3.0.0.0"
+        },
+        "runtime": {
+          "MoviesWeb.dll": {}
         },
         "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "compileOnly": true
+          "MoviesWeb.dll": {}
+        }
+      },
+      "Microsoft.Owin.Reference/4.0.0.0": {
+        "runtime": {
+          "Microsoft.Owin.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4677.103"
+          }
+        }
+      },
+      "EntityFramework.Reference/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
+          }
+        }
+      },
+      "System.Web.Optimization.Reference/1.1.0.0": {
+        "runtime": {
+          "System.Web.Optimization.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.40211.0"
+          }
+        }
+      },
+      "System.Web.Mvc.Reference/5.2.4.0": {
+        "runtime": {
+          "System.Web.Mvc.dll": {
+            "assemblyVersion": "5.2.4.0",
+            "fileVersion": "5.2.60201.0"
+          }
+        }
+      },
+      "Microsoft.Owin.Security.OAuth.Reference/4.0.0.0": {
+        "runtime": {
+          "Microsoft.Owin.Security.OAuth.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4677.103"
+          }
+        }
+      },
+      "Owin.Reference/1.0.0.0": {
+        "runtime": {
+          "Owin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.Identity.Core.Reference/2.0.0.0": {
+        "runtime": {
+          "Microsoft.AspNet.Identity.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.Identity.Owin.Reference/2.0.0.0": {
+        "runtime": {
+          "Microsoft.AspNet.Identity.Owin.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Owin.Security.Reference/4.0.0.0": {
+        "runtime": {
+          "Microsoft.Owin.Security.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4677.103"
+          }
+        }
+      },
+      "Microsoft.AspNet.Identity.EntityFramework.Reference/2.0.0.0": {
+        "runtime": {
+          "Microsoft.AspNet.Identity.EntityFramework.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Bogus.Reference/28.0.2.0": {
+        "runtime": {
+          "Bogus.dll": {
+            "assemblyVersion": "28.0.2.0",
+            "fileVersion": "28.0.2.0"
+          }
+        }
+      },
+      "Microsoft.Owin.Security.Cookies.Reference/4.0.0.0": {
+        "runtime": {
+          "Microsoft.Owin.Security.Cookies.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4677.103"
+          }
+        }
+      },
+      "System.Web.Http.Owin.Reference/5.2.4.0": {
+        "runtime": {
+          "System.Web.Http.Owin.dll": {
+            "assemblyVersion": "5.2.4.0",
+            "fileVersion": "5.2.60201.0"
+          }
+        }
+      },
+      "System.Web.Http.WebHost.Reference/5.2.4.0": {
+        "runtime": {
+          "System.Web.Http.WebHost.dll": {
+            "assemblyVersion": "5.2.4.0",
+            "fileVersion": "5.2.60201.0"
+          }
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb.Reference/4.0.0.0": {
+        "runtime": {
+          "Microsoft.Owin.Host.SystemWeb.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4677.103"
+          }
+        }
+      },
+      "Microsoft.Web.Infrastructure.Reference/1.0.0.0": {
+        "runtime": {
+          "Microsoft.Web.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.20105.407"
+          }
+        }
+      },
+      "System.Web.WebPages.Reference/3.0.0.0": {
+        "runtime": {
+          "System.Web.WebPages.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60201.0"
+          }
+        }
+      },
+      "System.Web.WebPages.Razor.Reference/3.0.0.0": {
+        "runtime": {
+          "System.Web.WebPages.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60201.0"
+          }
+        }
+      },
+      "System.Web.Razor.Reference/3.0.0.0": {
+        "runtime": {
+          "System.Web.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60201.0"
+          }
+        }
+      },
+      "System.Web.WebPages.Deployment.Reference/3.0.0.0": {
+        "runtime": {
+          "System.Web.WebPages.Deployment.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.60201.0"
+          }
+        }
       },
       "Microsoft.AspNetCore/2.2.0": {
         "dependencies": {
@@ -115,7 +367,7 @@
       },
       "Microsoft.AspNetCore.App/2.2.0": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.6",
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.Antiforgery": "2.2.0",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
@@ -3260,6 +3512,34 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNet.Cors/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r7qTj8SKzHT32F2mbB3qgE+6VUd2xILkGaq4LtMW+KP3dDAQmI//j+8Ku01I3D1GKZvB9PU8HTJPkaw7sxSLtQ==",
+      "path": "microsoft.aspnet.cors/5.2.7",
+      "hashPath": "microsoft.aspnet.cors.5.2.7.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
+      "path": "microsoft.aspnet.webapi.client/5.2.7",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gM2QzApnHdy1FbKUJ/ROGJSm69P2G+HMoVd/t5Vq1O/zZ5TI4IKC9PX6nUfRt/NHgebZOIWHpB4/4K4inuy4yQ==",
+      "path": "microsoft.aspnet.webapi.core/5.2.7",
+      "hashPath": "microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Cors/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LUY5ufoiYLHKZXdrrNe7GlAwmu9WlyrX5iUtBSLwFZ31/tvPobyU7j1E31OWVdGZMBvRCxKbfyB7unxgrjTRpA==",
+      "path": "microsoft.aspnet.webapi.cors/5.2.7",
+      "hashPath": "microsoft.aspnet.webapi.cors.5.2.7.nupkg.sha512"
+    },
     "Newtonsoft.Json/12.0.2": {
       "type": "package",
       "serviceable": true,
@@ -3267,19 +3547,124 @@
       "path": "newtonsoft.json/12.0.2",
       "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
     },
-    "SwaggerUi/1.1.0": {
+    "System.Configuration.ConfigurationManager/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gfK1DHXOXLYjgE76VkwCS8EXzFhZsT2IlbZN1m+EwkFmPL4PaBoYdkSqgiAeQ7jSu7lyn+QRfOkEC2zZ4svJBQ==",
-      "path": "swaggerui/1.1.0",
-      "hashPath": "swaggerui.1.1.0.nupkg.sha512"
+      "sha512": "sha512-+2SYYKwbN0n+9SrBanflZdaVleFkytEfTNzOu+f3SK0vROMMrorpw1UJyHJQ1ZooughRxPmLj8Fh5N2tSe7sdA==",
+      "path": "system.configuration.configurationmanager/4.5.0",
+      "hashPath": "system.configuration.configurationmanager.4.5.0.nupkg.sha512"
     },
-    "Microsoft.AspNet.WebApi.Client/5.2.6": {
+    "System.Security.Cryptography.ProtectedData/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
-      "path": "microsoft.aspnet.webapi.client/5.2.6",
-      "hashPath": "microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512"
+      "sha512": "sha512-s/MFK8BvgtejZj5a8qAPDXEGBtWkpFX98qwQP/wqVa9CgIC7LrKHxDFdlN5x6afGAb0ZVBVGIZlCdBLnO2QjZw==",
+      "path": "system.security.cryptography.protecteddata/4.5.0",
+      "hashPath": "system.security.cryptography.protecteddata.4.5.0.nupkg.sha512"
+    },
+    "MoviesWeb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Owin.Reference/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework.Reference/6.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Optimization.Reference/1.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Mvc.Reference/5.2.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Owin.Security.OAuth.Reference/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Owin.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNet.Identity.Core.Reference/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNet.Identity.Owin.Reference/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Owin.Security.Reference/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNet.Identity.EntityFramework.Reference/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Bogus.Reference/28.0.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Owin.Security.Cookies.Reference/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Http.Owin.Reference/5.2.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Http.WebHost.Reference/5.2.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Owin.Host.SystemWeb.Reference/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.Infrastructure.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.WebPages.Reference/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.WebPages.Razor.Reference/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Razor.Reference/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.WebPages.Deployment.Reference/3.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore/2.2.0": {
       "type": "package",
