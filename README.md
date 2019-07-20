@@ -11,4 +11,4 @@ Notes:
 * 3rd works out the average rating stored on the movies table as a cache so it doesn't need to compute the average every time it is queried from the API
 
 You can use the search UI in the MoviesWeb .NET Framework project to query the API or anything else like PostMan to query the following endpoint locally:
-http://localhost:52630/api/movies/
+http://localhost:52630/api/
