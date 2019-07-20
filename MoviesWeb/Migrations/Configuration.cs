@@ -67,7 +67,7 @@ namespace MoviesWeb.Migrations
                     var fake = new Faker<UserRating>()
                         .RuleFor(a => a.Movie_Id, f => f.Random.Int(movies.Min(x => x.Id), movies.Max(x => x.Id)))
                         .RuleFor(a => a.User_Id, f => f.Random.Int(users.Min(x => x.Id), users.Max(x => x.Id)))
-                        .RuleFor(a => a.Rating, f => f.Random.Decimal((decimal)0.0, (decimal)5.0))
+                        .RuleFor(a => a.Rating, f => f.Random.Int(1, 5))
                         .RuleFor(a => a.Comment, f => f.Lorem.Sentences());
 
                     _unit.UserRatingRepository.Add(fake.Generate());

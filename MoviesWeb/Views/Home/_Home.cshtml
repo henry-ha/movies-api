@@ -1,19 +1,60 @@
 ﻿<div class="row">
-    <div class="col-md-12">
-        <h2>Movies API</h2>
-        <input type="text" id="txtSearch" />
+    <h2>Movies API</h2>
+
+    <div class="col-md-4">
+        <h3>Search for a Movie</h3>
         <select id="ddlFilters">
             <option value="">-- Please select --</option>
             <option value="title">Title</option>
             <option value="year">Year of Release</option>
             <option value="genre">Genre</option>
         </select>
+        <input type="text" id="txtSearch" />
         <a class="btn btn-default" id="btnSearch" href="#">Search</a>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12">
-        <textarea id="results" rows="20" cols="40"></textarea>
+        <div class="row">
+            <div class="col-md-12">
+                <textarea id="results" rows="20" cols="40"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Top 5 Movies</h3>
+        <textarea id="top5movies" rows="10" cols="40"></textarea>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Top 5 Movies By User</h3>
+        <input type="text" id="txtTopMovieUserSearch" />
+        <a class="btn btn-default" id="btnTopMovieUserSearch" href="#">Search</a>
+        <textarea id="top5moviesByUser" rows="10" cols="40"></textarea>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Submit User Rating</h3>
+
+        <div class="col-md-12">
+            <label>Full name:</label>
+            <input type="text" id="txtUser" />
+        </div>
+
+        <div class="col-md-12">
+            <label>Movie ID:</label>
+            <input type="text" id="txtMovieId" />
+        </div>
+
+        <div class="col-md-12">
+            <label>Rating:</label>
+            <input type="text" id="txtRating" />
+        </div>
+
+        <div class="col-md-12">
+            <a class="btn btn-default" id="btnUserRatingSave" href="#">Submit</a>
+        </div>
+
+        <div class="col-md-12" style="padding-top:10px;">
+            <textarea id="userRatingSummary" rows="10" cols="40"></textarea>
+        </div>
     </div>
 </div>

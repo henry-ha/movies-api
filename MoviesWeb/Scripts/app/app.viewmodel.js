@@ -11,10 +11,21 @@
         }
     }
 
-    var api_url = "http://localhost:52630/api/movies/";
+    var api_movies_url = "http://localhost:52630/api/movies/";
+    var api_user_url = "http://localhost:52630/api/user/";
+
+    $("#txtSearch").keypress(function (e) {
+        if (e.keyCode == 13) {
+            searchMovies();
+            return false;
+        }
+    });
 
     $("#btnSearch").click(function () {
+        searchMovies();        
+    });
 
+    function searchMovies() {
         $("#results").html('');
 
         var ddlFilters = document.getElementById("ddlFilters");
@@ -22,7 +33,7 @@
         var txtSearch = document.getElementById("txtSearch").value;
 
         $.ajax({
-            url: api_url + strFilter + "/" + txtSearch,
+            url: api_movies_url + strFilter + "/" + txtSearch,
             contentType: "application/json",
             headers: { 'Access-Control-Allow-Origin': '*' },
             method: "GET",
@@ -30,10 +41,93 @@
             success: function (d) {
                 var data = JSON.stringify(d, null, "\t");
                 $("#results").text(data);
-                console.log(d);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $("#results").text(errorThrown);
+            }
+        });
+    }
+
+    getTop5Movies();
+
+    function getTop5Movies() {
+        $("#top5movies").text('');
+
+        $.ajax({
+            url: api_movies_url + "top/5",
+            contentType: "application/json",
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            method: "GET",
+            dataType: 'json',
+            success: function (d) {
+                var data = JSON.stringify(d, null, "\t");
+                $("#top5movies").text(data);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $("#top5movies").text(errorThrown);
             }
         })
+    }
+
+    $("#txtTopMovieUserSearch").keypress(function (e) {
+        if (e.keyCode == 13) {
+            getTop5MoviesByUser();
+            return false;
+        }
     });
+
+    $("#btnTopMovieUserSearch").click(function () {
+        getTop5MoviesByUser();
+    });
+
+    function getTop5MoviesByUser() {
+        $("#top5moviesByUser").text('');
+
+        var txtTopMovieUserSearch = document.getElementById("txtTopMovieUserSearch").value;
+
+        $.ajax({
+            url: api_movies_url + "top/5/user/" + txtTopMovieUserSearch,
+            contentType: "application/json",
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            method: "GET",
+            dataType: 'json',
+            success: function (d) {
+                var data = JSON.stringify(d, null, "\t");
+                $("#top5moviesByUser").text(data);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $("#top5moviesByUser").text(errorThrown);
+            }
+        })
+    }
+
+
+    $("#btnUserRatingSave").click(function () {
+        submitUserRating();
+    });
+
+    function submitUserRating() {
+        $("#userRatingSummary").html('');
+
+        var txtFullName = document.getElementById("txtUser").value;
+        var txtMovieId = document.getElementById("txtMovieId").value;
+        var txtRating = document.getElementById("txtRating").value;
+
+        $.ajax({
+            url: api_user_url + txtFullName + "/movie/" + txtMovieId + "/rating/" + txtRating,
+            contentType: "application/json",
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            method: "PUT",
+            dataType: 'json',
+            success: function (d) {
+                var data = JSON.stringify(d, null, "\t");
+                $("#userRatingSummary").text(data);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $("#userRatingSummary").text(errorThrown);
+            }
+        });
+    }
 
     // Data
     self.Views = {
