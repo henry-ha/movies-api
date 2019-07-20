@@ -1,9 +1,9 @@
 # movies-api
 Search and rank movies
 
-In Package Manager Console: Point Default project to: MoviesWeb
-**Please run the following line 3 times in Package Manager Console to update the database and seed data**:
-entityframework\update-database
+In Package Manager Console: **Point Default project to: MoviesWeb**
+* Please run the following line 3 times in Package Manager Console to update the database and seed data:
+**update-database**
 
 Notes: 
 * 1st update-database populates movies and users
