@@ -13,10 +13,8 @@ namespace MoviesWeb
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-            // Configure Web API to use only bearer token authentication.
-            EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:44302", "*", "GET,POST,PUT");
-            config.EnableCors(cors);
+            // New code
+            config.EnableCors();
 
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));

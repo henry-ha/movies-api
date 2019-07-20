@@ -1,0 +1,6 @@
+C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.1\MoviesAPI.csprojAssemblyReference.cache
+C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.1\MoviesAPI.csproj.CoreCompileInputs.cache
+C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.1\MoviesAPI.RazorAssemblyInfo.cache
+C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.1\MoviesAPI.RazorAssemblyInfo.cs
+C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.1\MoviesAPI.AssemblyInfoInputs.cache
+C:\Users\henry\Documents\Projects\movies-api\MoviesAPI\obj\Debug\netcoreapp2.1\MoviesAPI.AssemblyInfo.cs

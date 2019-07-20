@@ -54,18 +54,16 @@
       <HintPath>..\packages\Bogus.28.0.2\lib\net40\Bogus.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\MoviesAPI\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\MoviesAPI\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\MoviesAPI\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
-      <HintPath>..\MoviesAPI\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\MoviesAPI\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
@@ -330,6 +328,10 @@
     <Compile Include="Migrations\201907190903326_Movie_AverageRating.Designer.cs">
       <DependentUpon>201907190903326_Movie_AverageRating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907200019331_drop_CascadeDelete.cs" />
+    <Compile Include="Migrations\201907200019331_drop_CascadeDelete.Designer.cs">
+      <DependentUpon>201907200019331_drop_CascadeDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewModels\HomeViewModel.cs" />
     <Compile Include="MoviesContext.cs" />
     <Compile Include="BaseContext.cs" />
@@ -500,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907190903326_Movie_AverageRating.resx">
       <DependentUpon>201907190903326_Movie_AverageRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907200019331_drop_CascadeDelete.resx">
+      <DependentUpon>201907200019331_drop_CascadeDelete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

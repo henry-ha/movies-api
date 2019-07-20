@@ -147,7 +147,7 @@
           "Microsoft.AspNet.Identity.Core": "2.0.0.0",
           "Microsoft.AspNet.Identity.Owin": "2.0.0.0",
           "Microsoft.Owin.Security": "4.0.0.0",
-          "Microsoft.AspNet.Identity.EntityFramework": "2.0.0.0",
+          "Microsoft.AspNet.Identity.EntityFramework": "1.0.0.0",
           "Bogus": "28.0.2.0",
           "Microsoft.Owin.Security.Cookies": "4.0.0.0",
           "System.Web.Http.Owin": "5.2.4.0",
@@ -238,11 +238,11 @@
           }
         }
       },
-      "Microsoft.AspNet.Identity.EntityFramework.Reference/2.0.0.0": {
+      "Microsoft.AspNet.Identity.EntityFramework.Reference/1.0.0.0": {
         "runtime": {
           "Microsoft.AspNet.Identity.EntityFramework.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "0.0.0.0"
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.20911.0"
           }
         }
       },
@@ -3611,7 +3611,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNet.Identity.EntityFramework.Reference/2.0.0.0": {
+    "Microsoft.AspNet.Identity.EntityFramework.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

@@ -206,12 +206,16 @@ C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\Remotion.Linq.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Buffers.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Collections.Immutable.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.ComponentModel.Annotations.dll
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Configuration.ConfigurationManager.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Interactive.Async.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Memory.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Net.Http.Formatting.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Numerics.Vectors.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Security.AccessControl.dll
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Security.Permissions.dll
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Security.Principal.Windows.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Web.Cors.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Web.Helpers.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Web.Http.Cors.dll
@@ -291,7 +295,4 @@ C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.cspro
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.pdb
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.csprojAssemblyReference.cache
-C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Configuration.ConfigurationManager.dll
-C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Security.AccessControl.dll
-C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Security.Permissions.dll
-C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\bin\System.Security.Principal.Windows.dll
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.Migrations.drop_CascadeDelete.resources

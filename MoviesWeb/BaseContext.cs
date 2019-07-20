@@ -15,6 +15,7 @@ public abstract class BaseContext : DbContext
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
+        Database.SetInitializer<BaseContext>(null);
         base.OnModelCreating(modelBuilder);
         modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
     }

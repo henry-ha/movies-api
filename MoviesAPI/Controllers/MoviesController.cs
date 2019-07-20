@@ -15,11 +15,11 @@ namespace MoviesAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MoviesController : ControllerBase
     {
-        public UnitOfWork work;
+        private readonly UnitOfWork _work;
 
         public MoviesController()
         {
-            work = new UnitOfWork();
+            _work = new UnitOfWork();
         }
         
         // GET api/movies/{filter}/{searchtext}
@@ -62,15 +62,15 @@ namespace MoviesAPI.Controllers
             switch (filter.ToLower())
             {
                 case "title":
-                    result = work.MovieRepository.Find(x => x.Title.ToLower() == searchtext.ToLower());
+                    result = _work.MovieRepository.Find(x => x.Title.ToLower() == searchtext.ToLower());
                     break;
 
                 case "year":
-                    result = work.MovieRepository.Find(x => x.YearOfRelease.ToString() == searchtext.ToLower());
+                    result = _work.MovieRepository.Find(x => x.YearOfRelease.ToString() == searchtext.ToLower());
                     break;
 
                 case "genre":
-                    result = work.MovieRepository.Find(x => x.Genre.ToLower() == searchtext.ToLower());
+                    result = _work.MovieRepository.Find(x => x.Genre.ToLower() == searchtext.ToLower());
                     break;
             }
            

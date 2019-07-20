@@ -11,7 +11,7 @@
         }
     }
 
-    var api_url = "https://localhost:44302/api/movies/";
+    var api_url = "http://localhost:52630/api/movies/";
 
     $("#btnSearch").click(function () {
 
@@ -28,7 +28,8 @@
             method: "GET",
             dataType: 'json',
             success: function (d) {
-                $("#results").html(d);
+                var data = JSON.stringify(d, null, "\t");
+                $("#results").text(data);
                 console.log(d);
             }
         })
