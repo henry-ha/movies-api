@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace MoviesWeb.Models
 {
@@ -14,8 +15,10 @@ namespace MoviesWeb.Models
 
         [Required]
         [StringLength(255)]
-        public string Genre { get; set; }
-        
+        public string Genres { get; set; }
+
+        public TimeSpan Duration { get; set; }
+
         public decimal AverageRating { get; set; }
     }
 }

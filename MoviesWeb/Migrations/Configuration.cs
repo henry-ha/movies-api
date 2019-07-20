@@ -38,7 +38,8 @@ namespace MoviesWeb.Migrations
                     var fake = new Faker<Movie>()
                         .RuleFor(a => a.Title, f => f.Company.Random.Words())
                         .RuleFor(a => a.YearOfRelease, f => f.Date.Past(50).Year)
-                        .RuleFor(a => a.Genre, f => f.Random.Word());
+                        .RuleFor(a => a.Genres, f => f.Random.Words().Replace(" ", ","))
+                        .RuleFor(a => a.Duration, f => f.Date.Timespan(TimeSpan.FromHours(6)));
 
                     _unit.MovieRepository.Add(fake.Generate());
                 }

@@ -296,3 +296,4 @@ C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.dll
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.pdb
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.csprojAssemblyReference.cache
 C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.Migrations.drop_CascadeDelete.resources
+C:\Users\henry\Documents\Projects\movies-api\MoviesWeb\obj\Debug\MoviesWeb.Migrations.Add_MovieDuration.resources

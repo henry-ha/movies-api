@@ -332,6 +332,10 @@
     <Compile Include="Migrations\201907200019331_drop_CascadeDelete.Designer.cs">
       <DependentUpon>201907200019331_drop_CascadeDelete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907200320013_Add_MovieDuration.cs" />
+    <Compile Include="Migrations\201907200320013_Add_MovieDuration.Designer.cs">
+      <DependentUpon>201907200320013_Add_MovieDuration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewModels\HomeViewModel.cs" />
     <Compile Include="MoviesContext.cs" />
     <Compile Include="BaseContext.cs" />
@@ -505,6 +509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907200019331_drop_CascadeDelete.resx">
       <DependentUpon>201907200019331_drop_CascadeDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907200320013_Add_MovieDuration.resx">
+      <DependentUpon>201907200320013_Add_MovieDuration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

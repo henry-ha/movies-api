@@ -58,7 +58,7 @@ namespace API.Controllers
                     break;
 
                 case "genre":
-                    result = _work.MovieRepository.Find(x => x.Genre.ToLower().Contains(searchtext.ToLower()));
+                    result = _work.MovieRepository.Find(x => x.Genres.ToLower().Contains(searchtext.ToLower()));
                     break;
             }
 
