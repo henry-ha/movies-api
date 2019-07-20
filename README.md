@@ -12,3 +12,5 @@ Notes:
 
 You can use the search UI in the MoviesWeb .NET Framework project to query the API or anything else like PostMan to query the following endpoint locally:
 http://localhost:52630/api/
+
+http://localhost:52630/swagger will list all the API's available endpoint operations in a nice user friendly documentation

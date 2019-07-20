@@ -116,3 +116,5 @@ C:\Users\henry\Documents\Projects\movies-api\API\obj\Debug\API.dll
 C:\Users\henry\Documents\Projects\movies-api\API\obj\Debug\API.pdb
 C:\Users\henry\Documents\Projects\movies-api\API\bin\EntityFramework.SqlServer.dll
 C:\Users\henry\Documents\Projects\movies-api\API\bin\EntityFramework.SqlServer.xml
+C:\Users\henry\Documents\Projects\movies-api\API\bin\Swashbuckle.Core.dll
+C:\Users\henry\Documents\Projects\movies-api\API\bin\WebActivatorEx.dll
