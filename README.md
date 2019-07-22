@@ -1,6 +1,8 @@
 # movies-api
 Search and rank movies
 
+* Set both projects as start-up projects from solution properties
+
 In Package Manager Console: **Point Default project to: MoviesWeb**
 * Please run the following line 3 times in Package Manager Console to update the database and seed data:
 **update-database**
